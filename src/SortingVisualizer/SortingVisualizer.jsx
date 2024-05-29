@@ -2,16 +2,9 @@ import React from 'react';
 import {getMergeSortAnimations} from '../sortingAlgorithms/sortingAlgorithms.js';
 import './SortingVisualizer.css';
 
-// Change this value for the speed of the animations.
 const ANIMATION_SPEED_MS = 1;
-
-// Change this value for the number of bars (value) in the array.
 const NUMBER_OF_ARRAY_BARS = 270;
-
-// This is the main color of the array bars.
 const PRIMARY_COLOR = 'turquoise';
-
-// This is the color of array bars that are being compared throughout the animations.
 const SECONDARY_COLOR = 'red';
 
 export default class SortingVisualizer extends React.Component {
@@ -71,9 +64,6 @@ export default class SortingVisualizer extends React.Component {
     // We leave it as an exercise to the viewer of this code to implement this method.
   }
 
-  // NOTE: This method will only work if your sorting algorithms actually return
-  // the sorted arrays; if they return the animations (as they currently do), then
-  // this method will be broken.
   testSortingAlgorithms() {
     for (let i = 0; i < 100; i++) {
       const array = [];
@@ -103,9 +93,6 @@ export default class SortingVisualizer extends React.Component {
         ))}
         <button onClick={() => this.resetArray()}>Generate New Array</button>
         <button onClick={() => this.mergeSort()}>Merge Sort</button>
-        <button onClick={() => this.quickSort()}>Quick Sort</button>
-        <button onClick={() => this.heapSort()}>Heap Sort</button>
-        <button onClick={() => this.bubbleSort()}>Bubble Sort</button>
         <button onClick={() => this.testSortingAlgorithms()}>
           Test Sorting Algorithms (BROKEN)
         </button>
@@ -114,9 +101,7 @@ export default class SortingVisualizer extends React.Component {
   }
 }
 
-// From https://stackoverflow.com/questions/4959975/generate-random-number-between-two-numbers-in-javascript
 function randomIntFromInterval(min, max) {
-  // min and max included
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
